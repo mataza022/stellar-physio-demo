@@ -347,28 +347,59 @@
         .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-size: 0.8rem; }
 
         /* =========================================
-           RESPONSIVE DESIGN (Mobile Adjustments)
+           RESPONSIVE DESIGN (Mobile & Tablet Adjustments)
            ========================================= */
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 2.8rem; }
-            .quick-access-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+        /* Changed breakpoint to 991px to ensure all phones and tablets get the mobile layout */
+        @media (max-width: 991px) {
+            /* Hide the crowded top bar on mobile and tablet */
+            .top-bar { display: none; }
+            
+            /* Clean up the main header */
+            header .container { 
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                padding: 10px 15px; 
+                position: relative;
+            }
+            
+            /* Position hamburger absolutely to the left */
+            .hamburger { 
+                display: block; 
+                position: absolute; 
+                left: 15px; 
+                top: 50%; 
+                transform: translateY(-50%); 
+            }
+            
+            /* Center the logo */
+            .logo { 
+                margin: 0 auto; 
+                display: block; 
+                text-align: center; 
+            }
+            .logo img { height: 60px; width: auto; }
+            
+            /* Hide desktop elements */
+            nav ul { display: none; } 
+            header .btn-purple { display: none; } 
+
+            /* Layout adjustments for sections */
+            .quick-access-grid, .services-grid { grid-template-columns: 1fr; }
             .locations-layout { grid-template-columns: 1fr; }
             .news-layout { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            nav ul { display: none; } 
-            .hamburger { display: block; }
-            header .btn-purple { display: none; } 
-
-            .hero h1 { font-size: 2.2rem; }
-            .quick-access-grid, .services-grid { grid-template-columns: 1fr; }
             .locations-grid { grid-template-columns: 1fr; }
             .services-bottom-bar { flex-direction: column; text-align: center; gap: 20px; }
-            .footer-grid { grid-template-columns: 1fr; }
             .news-item { grid-template-columns: 1fr; }
             .news-item img { height: 150px; }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -448,7 +479,7 @@
         </div>
     </div>
 
-    <!-- TOP BAR -->
+    <!-- TOP BAR (Hidden on mobile via CSS) -->
     <div class="top-bar">
         <div class="container">
             <div>📍 Kenital Plaza, Ngong Road: +254 706 101999 || Parklands Sports Club: +254 755 901942 || Karen Country Club: +254 739 110110</div>
@@ -490,7 +521,8 @@
                 <p>Welcome to Stellar Physio Health and Wellness Centre, a leading physiotherapy clinic in Nairobi with over 10 years of experience in pain relief, injury rehabilitation, and movement recovery.</p>
                 <div class="hero-buttons">
                     <a href="/services/" class="btn btn-green">Explore Services</a>
-                    <a href="/contact/" class="btn btn-outline-white">Find a Clinic</a>
+                    <!-- Changed button text from "Find a Clinic" to "Book Now" -->
+                    <a href="/book-appointment/" class="btn btn-outline-white">Book Now</a>
                 </div>
             </div>
         </div>
