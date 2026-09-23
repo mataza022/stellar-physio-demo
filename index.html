@@ -82,121 +82,145 @@
 
         header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         
-        /* Increased Main Logo Size */
-        .logo img { height: 100px; width: auto; display: block; }
+        .logo img { height: 90px; width: auto; display: block; }
 
         nav ul { display: flex; gap: 25px; }
         nav a { font-weight: 500; color: var(--text-dark); }
         nav a:hover { color: var(--primary-purple); }
 
-        /* --- HAMBURGER & SIDE MENU STYLES --- */
+        /* --- HAMBURGER & SIDE MENU STYLES (Based on Original Site) --- */
         .hamburger { display: none; font-size: 2rem; color: var(--primary-purple); background: none; border: none; cursor: pointer; }
 
-        .side-nav {
+        /* The overlay that darkens the rest of the page */
+        .vs-menu-wrapper {
             position: fixed;
             top: 0;
-            left: -100%; /* Hidden off-screen */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .vs-menu-wrapper.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* The actual slide-out menu */
+        .vs-menu-area {
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 85%;
             max-width: 350px;
-            height: 100vh;
+            height: 100%;
             background-color: var(--white);
-            z-index: 2000;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
             transition: left 0.3s ease;
             display: flex;
             flex-direction: column;
-            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        .vs-menu-wrapper.open .vs-menu-area {
+            left: 0;
         }
 
-        .side-nav.open { left: 0; }
-
-        /* Side Nav Header (Logo + Close) */
-        .side-nav-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: var(--primary-purple-light);
-            border-bottom: 1px solid #e0d0ed;
-        }
-
-        /* Increased Side Menu Logo Size */
-        .side-nav-header img { height: 70px; width: auto; }
-
-        .close-btn {
+        /* Close Button */
+        .vs-menu-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
             background-color: var(--primary-purple);
             color: var(--white);
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
             font-size: 1.4rem;
-            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            z-index: 10;
         }
 
-        /* Side Nav Search Bar */
-        .side-nav-search {
+        /* Mobile Logo */
+        .mobile-logo {
+            padding: 40px 20px 20px;
+            text-align: center;
+            background-color: var(--primary-purple-light);
+            border-bottom: 1px solid #e0d0ed;
+        }
+        .mobile-logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        /* Mobile Search Form */
+        .mobile-menu-form {
             padding: 20px;
-            display: flex;
-            align-items: center;
+            position: relative;
             border-bottom: 1px solid #eee;
         }
-
-        .side-nav-search input {
+        .mobile-menu-form input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px 40px 12px 15px;
             border: 1px solid #ddd;
             border-radius: 6px;
             font-size: 1rem;
-            font-family: var(--font-main);
             outline: none;
         }
-
-        .side-nav-search .search-icon {
+        .mobile-menu-form button {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
             color: var(--primary-purple);
             font-size: 1.2rem;
-            margin-left: -35px; /* Position icon inside input */
             cursor: pointer;
         }
 
-        /* Side Nav Links */
-        .side-nav-links {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding-bottom: 20px;
+        /* Mobile Menu Links */
+        .vs-mobile-menu ul {
+            padding: 0;
+            margin: 0;
         }
-
-        .side-nav-links li {
+        .vs-mobile-menu ul li {
             border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
+            position: relative;
         }
-
-        .side-nav-links li:hover { background-color: var(--primary-purple-light); }
-
-        .side-nav-links a {
+        .vs-mobile-menu ul li a {
             display: flex;
             align-items: center;
-            padding: 16px 20px;
-            width: 100%;
+            padding: 15px 20px;
             font-weight: 600;
             color: var(--primary-purple-dark);
             font-size: 1.05rem;
+            transition: background 0.2s;
         }
-
-        .nav-arrow {
+        .vs-mobile-menu ul li a:hover {
+            background-color: var(--primary-purple-light);
+        }
+        
+        /* The > arrow and + button icons */
+        .vs-mobile-menu ul li a::before {
+            content: ">";
             color: var(--primary-purple);
-            margin-right: 15px;
             font-weight: bold;
             font-size: 1.2rem;
+            margin-right: 15px;
         }
-
-        .nav-plus {
+        .vs-mobile-menu ul li.menu-item-has-children::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             background-color: var(--primary-purple-light);
             color: var(--primary-purple);
             width: 32px;
@@ -205,26 +229,32 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
             font-size: 1.4rem;
             font-weight: bold;
             cursor: pointer;
         }
 
-        .nav-plus.no-plus { visibility: hidden; }
-
-        /* Dark Overlay */
-        .overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+        /* Sub-menu items */
+        .vs-mobile-menu .sub-menu {
+            display: none;
+            background-color: #fafafa;
+            padding-left: 20px;
         }
-
-        .overlay.active { opacity: 1; visibility: visible; }
+        .vs-mobile-menu .sub-menu.show {
+            display: block;
+        }
+        .vs-mobile-menu .sub-menu li a {
+            font-size: 0.95rem;
+            padding: 10px 20px;
+        }
+        .vs-mobile-menu .sub-menu li a::before {
+            content: "-";
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        .vs-mobile-menu .sub-menu li.menu-item-has-children::after {
+            display: none; /* No plus on sub-sub menus */
+        }
 
         /* =========================================
            HERO SECTION
@@ -375,59 +405,83 @@
 </head>
 <body>
 
-    <!-- SIDE NAVIGATION (Mobile Menu) -->
-    <div class="side-nav" id="sideNav">
-        <!-- Header with Logo and Close Button -->
-        <div class="side-nav-header">
-            <img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo">
-            <button class="close-btn" id="closeMenu">&times;</button>
+    <!-- =========================================
+         MOBILE SIDE MENU (Based on Original Site)
+         ========================================= -->
+    <div class="vs-menu-wrapper" id="mobileMenu">
+        <div class="vs-menu-area">
+            <button class="vs-menu-toggle" id="closeMenu"><i class="fas fa-times">✕</i></button>
+            
+            <div class="mobile-logo">
+                <a href="/"><img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo"></a>
+            </div>
+            
+            <form class="mobile-menu-form" action="/">
+                <input type="text" placeholder="Search....">
+                <button type="submit">🔍</button>
+            </form>
+            
+            <div class="vs-mobile-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">About Us</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Services</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">General Consultations</a></li>
+                            <li><a href="#">Chiropractor Services</a></li>
+                            <li><a href="#">Physiotherapy</a></li>
+                            <li><a href="#">Home-Based Care</a></li>
+                            <li><a href="#">Laboratory Services</a></li>
+                            <li><a href="#">Pharmacy</a></li>
+                            <li><a href="#">Counselling Services</a></li>
+                            <li><a href="#">Sports Massage</a></li>
+                            <li><a href="#">Reflexology</a></li>
+                            <li><a href="#">Occupational Therapy</a></li>
+                            <li><a href="#">Nutritional Services</a></li>
+                            <li><a href="#">Stretch & Exercise Therapy</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Conditions</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Arthritis & Joint Pains</a></li>
+                            <li><a href="#">Lower Back Pain & Spine Health</a></li>
+                            <li><a href="#">Sports Injuries</a></li>
+                            <li><a href="#">Stroke Rehabilitation</a></li>
+                            <li><a href="#">Pre- & Post-Surgery Rehab</a></li>
+                            <li><a href="#">Pre & Post-Natal Massages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Branches</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Kenital Plaza, Ngong Road</a></li>
+                            <li><a href="#">Karen Country Club</a></li>
+                            <li><a href="#">Parklands Sports Club</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Health & Wellness</a></li>
+                            <li><a href="#">Health</a></li>
+                            <li><a href="#">Sports Injury</a></li>
+                            <li><a href="#">Therapy</a></li>
+                            <li><a href="#">Mental Health</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Search Bar -->
-        <div class="side-nav-search">
-            <input type="text" placeholder="Search....">
-            <span class="search-icon">🔍</span>
-        </div>
-
-        <!-- Navigation Links -->
-        <ul class="side-nav-links">
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Home</a>
-                <span class="nav-plus no-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> About Us</a>
-                <span class="nav-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Services</a>
-                <span class="nav-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Conditions</a>
-                <span class="nav-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Branches</a>
-                <span class="nav-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> FAQs</a>
-                <span class="nav-plus no-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Contact Us</a>
-                <span class="nav-plus no-plus">+</span>
-            </li>
-            <li>
-                <a href="#"><span class="nav-arrow">&gt;</span> Blog</a>
-                <span class="nav-plus">+</span>
-            </li>
-        </ul>
     </div>
-
-    <!-- DARK OVERLAY -->
-    <div class="overlay" id="overlay"></div>
 
     <!-- TOP BAR -->
     <div class="top-bar">
@@ -444,9 +498,7 @@
     <!-- HEADER / NAVIGATION -->
     <header>
         <div class="container">
-            <!-- Hamburger Button (Mobile Only) -->
             <button class="hamburger" id="openMenu">☰</button>
-
             <div class="logo">
                 <img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo">
             </div>
@@ -652,88 +704,4 @@
                         </div>
                     </div>
                     <div class="news-item">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 3">
-                        <div>
-                            <span class="news-tag" style="background-color: var(--primary-purple);">SPORTS INJURY</span>
-                            <h4>Returning to Sport After an ACL Injury: A Complete Guide</h4>
-                            <a href="#" class="service-link" style="font-size: 0.8rem;">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Subscribe to our Newsletter</h4>
-                    <p style="margin-bottom: 15px;">Get the latest health tips and Stellar Physio updates delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Information</h4>
-                    <ul>
-                        <li>📍 Kental Plaza, Ngong Road, Nairobi</li>
-                        <li>📞 +254 700 000 000</li>
-                        <li>✉️ info@stellarphysio.com</li>
-                        <li>🕒 Mon - Fri: 8:00am - 6:00pm</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Find a Clinic</a></li>
-                        <li><a href="#">Health Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter (X)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Stellar Physio. All rights reserved. | Designed for Prototype Purposes</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
-    <script>
-        const openBtn = document.getElementById('openMenu');
-        const closeBtn = document.getElementById('closeMenu');
-        const sideNav = document.getElementById('sideNav');
-        const overlay = document.getElementById('overlay');
-
-        function openMenu() {
-            sideNav.classList.add('open');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeMenu() {
-            sideNav.classList.remove('open');
-            overlay.classList.remove('active');
-            document.body.style.overflow = ''; 
-        }
-
-        openBtn.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-    </script>
-
-</body>
-</html>
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=c
