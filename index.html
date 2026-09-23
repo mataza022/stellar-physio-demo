@@ -82,7 +82,8 @@
 
         header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         
-        .logo img { height: 90px; width: auto; display: block; }
+        /* Increased Main Logo Size */
+        .logo img { height: 100px; width: auto; display: block; }
 
         nav ul { display: flex; gap: 25px; }
         nav a { font-weight: 500; color: var(--text-dark); }
@@ -113,21 +114,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            background-color: var(--primary-purple-light); /* Light purple background like screenshot */
+            padding: 20px;
+            background-color: var(--primary-purple-light);
             border-bottom: 1px solid #e0d0ed;
         }
 
-        .side-nav-header img { height: 50px; width: auto; }
+        /* Increased Side Menu Logo Size */
+        .side-nav-header img { height: 70px; width: auto; }
 
         .close-btn {
             background-color: var(--primary-purple);
             color: var(--white);
             border: none;
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            font-size: 1.4rem;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -209,9 +211,7 @@
             cursor: pointer;
         }
 
-        .nav-plus.no-plus {
-            visibility: hidden; /* For items without submenus */
-        }
+        .nav-plus.no-plus { visibility: hidden; }
 
         /* Dark Overlay */
         .overlay {
@@ -361,7 +361,7 @@
         @media (max-width: 768px) {
             nav ul { display: none; } 
             .hamburger { display: block; }
-            header .btn-purple { display: none; } /* Hide desktop book button on mobile */
+            header .btn-purple { display: none; } 
 
             .hero h1 { font-size: 2.2rem; }
             .quick-access-grid, .services-grid { grid-template-columns: 1fr; }
@@ -721,13 +721,13 @@
         function openMenu() {
             sideNav.classList.add('open');
             overlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeMenu() {
             sideNav.classList.remove('open');
             overlay.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = ''; 
         }
 
         openBtn.addEventListener('click', openMenu);
