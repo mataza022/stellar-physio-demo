@@ -9,22 +9,15 @@
            CSS VARIABLES (Stellar Physio Colors)
            ========================================= */
         :root {
-            /* Primary Purple from current site */
             --primary-purple: #5c2c7e; 
             --primary-purple-dark: #3f1c59;
             --primary-purple-light: #f3ebf9;
-            
-            /* Primary Green from current site */
             --primary-green: #4caf50;
             --primary-green-dark: #388e3c;
-            
-            /* Neutrals */
             --text-dark: #333333;
             --text-light: #666666;
             --bg-light: #f9f9f9;
             --white: #ffffff;
-            
-            /* Fonts */
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -63,10 +56,6 @@
             padding: 80px 0;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
         /* =========================================
            TYPOGRAPHY & BUTTONS
            ========================================= */
@@ -99,47 +88,14 @@
             text-align: center;
         }
 
-        .btn-purple {
-            background-color: var(--primary-purple);
-            color: var(--white);
-            border: none;
-        }
-
-        .btn-purple:hover {
-            background-color: var(--primary-purple-dark);
-        }
-
-        .btn-green {
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: none;
-        }
-
-        .btn-green:hover {
-            background-color: var(--primary-green-dark);
-        }
-
-        .btn-outline-purple {
-            background-color: transparent;
-            color: var(--primary-purple);
-            border: 2px solid var(--primary-purple);
-        }
-
-        .btn-outline-purple:hover {
-            background-color: var(--primary-purple);
-            color: var(--white);
-        }
-
-        .btn-outline-white {
-            background-color: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline-white:hover {
-            background-color: var(--white);
-            color: var(--primary-purple);
-        }
+        .btn-purple { background-color: var(--primary-purple); color: var(--white); border: none; }
+        .btn-purple:hover { background-color: var(--primary-purple-dark); }
+        .btn-green { background-color: var(--primary-green); color: var(--white); border: none; }
+        .btn-green:hover { background-color: var(--primary-green-dark); }
+        .btn-outline-purple { background-color: transparent; color: var(--primary-purple); border: 2px solid var(--primary-purple); }
+        .btn-outline-purple:hover { background-color: var(--primary-purple); color: var(--white); }
+        .btn-outline-white { background-color: transparent; color: var(--white); border: 2px solid var(--white); }
+        .btn-outline-white:hover { background-color: var(--white); color: var(--primary-purple); }
 
         /* =========================================
            HEADER & NAVIGATION
@@ -175,14 +131,10 @@
             padding: 15px 20px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-purple);
-        }
-
-        .logo span {
-            color: var(--primary-green);
+        .logo img {
+            height: 90px;
+            width: auto;
+            display: block;
         }
 
         nav ul {
@@ -199,11 +151,103 @@
             color: var(--primary-purple);
         }
 
+        /* --- HAMBURGER MENU STYLES --- */
+        .hamburger {
+            display: none; /* Hidden on desktop */
+            font-size: 2rem;
+            color: var(--primary-purple);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Side Navigation Slide-out */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -300px; /* Hidden off-screen to the left */
+            width: 280px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: left 0.3s ease;
+            padding-top: 20px;
+        }
+
+        .side-nav.open {
+            left: 0; /* Slides in */
+        }
+
+        .side-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close-btn {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        .side-nav ul {
+            flex-direction: column;
+            gap: 0;
+            padding: 20px 0;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul a {
+            display: block;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .side-nav ul a:hover {
+            background-color: var(--primary-purple-light);
+            color: var(--primary-purple);
+            padding-left: 25px; /* Slide effect on hover */
+            transition: all 0.2s ease;
+        }
+
+        .side-nav .mobile-book-btn {
+            margin: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        /* Dark Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* =========================================
            HERO SECTION
            ========================================= */
         .hero {
-            /* UPDATED: Changed URL to hero.jpeg */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpeg') center/cover;
             height: 80vh;
             display: flex;
@@ -270,20 +314,15 @@
         }
 
         /* =========================================
-           SERVICES SECTION (Dark Background)
+           SERVICES SECTION
            ========================================= */
         .services {
             background-color: var(--primary-purple);
             color: var(--white);
         }
 
-        .services h2.section-title {
-            color: var(--white);
-        }
-
-        .services p.section-subtitle {
-            color: rgba(255,255,255,0.8);
-        }
+        .services h2.section-title { color: var(--white); }
+        .services p.section-subtitle { color: rgba(255,255,255,0.8); }
 
         .services-grid {
             display: grid;
@@ -305,20 +344,9 @@
             object-fit: cover;
         }
 
-        .service-card-content {
-            padding: 25px;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
+        .service-card-content { padding: 25px; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .service-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px; }
 
         .service-link {
             color: var(--primary-green);
@@ -339,11 +367,9 @@
         }
 
         /* =========================================
-           LOCATIONS / CLINICS SECTION
+           LOCATIONS SECTION
            ========================================= */
-        .locations {
-            background-color: var(--bg-light);
-        }
+        .locations { background-color: var(--bg-light); }
 
         .locations-layout {
             display: grid;
@@ -352,15 +378,8 @@
             align-items: center;
         }
 
-        .locations-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .locations-text p {
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
+        .locations-text h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .locations-text p { color: var(--text-light); margin-bottom: 30px; }
 
         .locations-grid {
             display: grid;
@@ -375,33 +394,15 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .location-card img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-        }
-
-        .location-info {
-            padding: 15px;
-        }
-
-        .location-info h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .location-info a {
-            color: var(--primary-green);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+        .location-card img { width: 100%; height: 120px; object-fit: cover; }
+        .location-info { padding: 15px; }
+        .location-info h4 { font-size: 1rem; margin-bottom: 5px; }
+        .location-info a { color: var(--primary-green); font-size: 0.85rem; font-weight: 600; }
 
         /* =========================================
            TESTIMONIALS SECTION
            ========================================= */
-        .testimonials {
-            background-color: var(--primary-purple-light);
-        }
+        .testimonials { background-color: var(--primary-purple-light); }
 
         .testimonial-box {
             max-width: 800px;
@@ -425,23 +426,13 @@
             margin-bottom: 30px;
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary-purple);
-        }
-
-        .testimonial-role {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+        .testimonial-author { font-weight: 700; color: var(--primary-purple); }
+        .testimonial-role { font-size: 0.9rem; color: var(--text-light); }
 
         /* =========================================
            PARTNERS SECTION
            ========================================= */
-        .partners {
-            background-color: var(--white);
-            padding: 60px 0;
-        }
+        .partners { background-color: var(--white); padding: 60px 0; }
 
         .partners-grid {
             display: flex;
@@ -454,17 +445,12 @@
             filter: grayscale(100%);
         }
 
-        .partners-grid img {
-            height: 40px;
-            object-fit: contain;
-        }
+        .partners-grid img { height: 40px; object-fit: contain; }
 
         /* =========================================
            NEWS SECTION
            ========================================= */
-        .news {
-            background-color: var(--white);
-        }
+        .news { background-color: var(--white); }
 
         .news-layout {
             display: grid;
@@ -491,16 +477,9 @@
             margin-bottom: 15px;
         }
 
-        .news-featured h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
+        .news-featured h3 { font-size: 1.8rem; margin-bottom: 15px; }
 
-        .news-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+        .news-sidebar { display: flex; flex-direction: column; gap: 30px; }
 
         .news-item {
             display: grid;
@@ -516,10 +495,7 @@
             border-radius: 8px;
         }
 
-        .news-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
+        .news-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
 
         /* =========================================
            FOOTER
@@ -537,29 +513,12 @@
             margin-bottom: 40px;
         }
 
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
+        .footer-col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col p, .footer-col ul { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a:hover { color: var(--primary-green); }
 
-        .footer-col p, .footer-col ul {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul a:hover {
-            color: var(--primary-green);
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 15px;
-        }
+        .newsletter-form { display: flex; margin-top: 15px; }
 
         .newsletter-form input {
             padding: 10px;
@@ -599,7 +558,13 @@
         }
 
         @media (max-width: 768px) {
-            nav ul { display: none; } /* Simplified mobile nav for prototype */
+            /* Hide desktop nav and show hamburger */
+            nav ul { display: none; } 
+            .hamburger { display: block; }
+            
+            /* Hide desktop book button to keep header clean */
+            header .btn-purple { display: none; }
+
             .hero h1 { font-size: 2.2rem; }
             .quick-access-grid, .services-grid { grid-template-columns: 1fr; }
             .locations-grid { grid-template-columns: 1fr; }
@@ -611,6 +576,26 @@
     </style>
 </head>
 <body>
+
+    <!-- SIDE NAVIGATION (Mobile Menu) -->
+    <div class="side-nav" id="sideNav">
+        <div class="side-nav-header">
+            <span style="font-size: 1.2rem; font-weight: bold; color: var(--primary-purple);">Menu</span>
+            <button class="close-btn" id="closeMenu">&times;</button>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Conditions</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <a href="#" class="btn btn-purple mobile-book-btn">Book Appointment</a>
+    </div>
+
+    <!-- DARK OVERLAY -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- TOP BAR -->
     <div class="top-bar">
@@ -627,9 +612,11 @@
     <!-- HEADER / NAVIGATION -->
     <header>
         <div class="container">
-            <!-- UPDATED: Logo image size increased to 90px -->
+            <!-- Hamburger Button (Mobile Only) -->
+            <button class="hamburger" id="openMenu">☰</button>
+
             <div class="logo">
-                <img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo" style="height: 90px; width: auto;">
+                <img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo">
             </div>
             <nav>
                 <ul>
@@ -688,14 +675,13 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION (Dark Purple Background) -->
+    <!-- SERVICES SECTION -->
     <section class="section-padding services">
         <div class="container">
             <h2 class="section-title">Our Specialized Services</h2>
             <p class="section-subtitle">Comprehensive rehabilitation delivered by world-class professionals using state-of-the-art technology.</p>
             
             <div class="services-grid">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Physiotherapy">
                     <div class="service-card-content">
@@ -704,7 +690,6 @@
                         <a href="#" class="service-link">Read More →</a>
                     </div>
                 </div>
-                <!-- Service 2 -->
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chiropractic">
                     <div class="service-card-content">
@@ -713,7 +698,6 @@
                         <a href="#" class="service-link">Read More →</a>
                     </div>
                 </div>
-                <!-- Service 3 -->
                 <div class="service-card">
                     <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dry Needling">
                     <div class="service-card-content">
@@ -734,7 +718,7 @@
         </div>
     </section>
 
-    <!-- LOCATIONS / CLINICS SECTION -->
+    <!-- LOCATIONS SECTION -->
     <section class="section-padding locations">
         <div class="container">
             <div class="locations-layout">
@@ -797,7 +781,6 @@
         <div class="container">
             <h2 class="section-title" style="font-size:1.5rem;">Trusted by leading organisations</h2>
             <div class="partners-grid">
-                <!-- Placeholder logos simulating insurance partners -->
                 <img src="https://via.placeholder.com/150x50?text=APA+Insurance" alt="Partner 1">
                 <img src="https://via.placeholder.com/150x50?text=Jubilee+Health" alt="Partner 2">
                 <img src="https://via.placeholder.com/150x50?text=Britam" alt="Partner 3">
@@ -807,7 +790,7 @@
         </div>
     </section>
 
-    <!-- NEWS & UPDATES SECTION -->
+    <!-- NEWS SECTION -->
     <section class="section-padding news">
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
@@ -819,7 +802,6 @@
             </div>
 
             <div class="news-layout">
-                <!-- Featured Article -->
                 <div class="news-featured">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Featured News">
                     <span class="news-tag">HEALTH TIPS</span>
@@ -828,7 +810,6 @@
                     <a href="#" class="service-link">Read More →</a>
                 </div>
 
-                <!-- Sidebar Articles -->
                 <div class="news-sidebar">
                     <div class="news-item">
                         <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 2">
@@ -855,7 +836,6 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- Col 1 -->
                 <div class="footer-col">
                     <h4>Subscribe to our Newsletter</h4>
                     <p style="margin-bottom: 15px;">Get the latest health tips and Stellar Physio updates delivered to your inbox.</p>
@@ -864,7 +844,6 @@
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
-                <!-- Col 2 -->
                 <div class="footer-col">
                     <h4>Contact Information</h4>
                     <ul>
@@ -874,7 +853,6 @@
                         <li>🕒 Mon - Fri: 8:00am - 6:00pm</li>
                     </ul>
                 </div>
-                <!-- Col 3 -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
@@ -885,7 +863,6 @@
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
-                <!-- Col 4 -->
                 <div class="footer-col">
                     <h4>Follow Us</h4>
                     <ul>
@@ -901,6 +878,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+        // Get the elements
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const sideNav = document.getElementById('sideNav');
+        const overlay = document.getElementById('overlay');
+
+        // Function to open the menu
+        function openMenu() {
+            sideNav.classList.add('open');
+            overlay.classList.add('active');
+        }
+
+        // Function to close the menu
+        function closeMenu() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        // Event Listeners
+        openBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu); // Close when clicking the dark background
+    </script>
 
 </body>
 </html>
