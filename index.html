@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellar Physio - Website Redesign Prototype</title>
+    <title>Stellar Physio | Best Physiotherapy Clinic in Nairobi</title>
     <style>
         /* =========================================
            CSS VARIABLES (Stellar Physio Colors)
@@ -89,15 +89,7 @@
         nav a:hover { color: var(--primary-purple); }
 
         /* --- HAMBURGER & SIDE MENU STYLES --- */
-        .hamburger { 
-            display: none; 
-            font-size: 2rem; 
-            color: var(--primary-purple); 
-            background: none; 
-            border: none; 
-            cursor: pointer; 
-            z-index: 1001;
-        }
+        .hamburger { display: none; font-size: 2rem; color: var(--primary-purple); background: none; border: none; cursor: pointer; z-index: 1001; }
 
         .vs-menu-wrapper {
             position: fixed;
@@ -111,10 +103,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
-        .vs-menu-wrapper.open {
-            opacity: 1;
-            visibility: visible;
-        }
+        .vs-menu-wrapper.open { opacity: 1; visibility: visible; }
 
         .vs-menu-area {
             position: absolute;
@@ -130,9 +119,7 @@
             flex-direction: column;
             overflow-y: auto;
         }
-        .vs-menu-wrapper.open .vs-menu-area {
-            left: 0;
-        }
+        .vs-menu-wrapper.open .vs-menu-area { left: 0; }
 
         .vs-menu-toggle {
             position: absolute;
@@ -209,7 +196,6 @@
             margin-right: 15px;
         }
 
-        /* The + button for submenus */
         .vs-mobile-menu ul li.menu-item-has-children > a::after {
             content: "+";
             position: absolute;
@@ -226,7 +212,7 @@
             justify-content: center;
             font-size: 1.4rem;
             font-weight: bold;
-            pointer-events: none; /* Let the click go to the parent <a> */
+            pointer-events: none;
         }
 
         .vs-mobile-menu .sub-menu {
@@ -235,15 +221,8 @@
             padding-left: 20px;
         }
         .vs-mobile-menu .sub-menu.show { display: block; }
-        .vs-mobile-menu .sub-menu li a {
-            font-size: 0.95rem;
-            padding: 10px 20px;
-        }
-        .vs-mobile-menu .sub-menu li a::before {
-            content: "-";
-            font-size: 1rem;
-            margin-right: 10px;
-        }
+        .vs-mobile-menu .sub-menu li a { font-size: 0.95rem; padding: 10px 20px; }
+        .vs-mobile-menu .sub-menu li a::before { content: "-"; font-size: 1rem; margin-right: 10px; }
         .vs-mobile-menu .sub-menu li.menu-item-has-children > a::after { display: none; }
 
         /* =========================================
@@ -395,77 +374,73 @@
 </head>
 <body>
 
-    <!-- =========================================
-         MOBILE SIDE MENU
-         ========================================= -->
+    <!-- MOBILE SIDE MENU -->
     <div class="vs-menu-wrapper" id="mobileMenu">
         <div class="vs-menu-area">
             <button class="vs-menu-toggle" id="closeMenu">✕</button>
-            
             <div class="mobile-logo">
                 <a href="/"><img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo"></a>
             </div>
-            
             <form class="mobile-menu-form" action="/">
                 <input type="text" placeholder="Search....">
                 <button type="submit">🔍</button>
             </form>
-            
             <div class="vs-mobile-menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="menu-item-has-children">
-                        <a href="#">About Us</a>
+                        <a href="/about/">About Us</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Careers</a></li>
+                            <li><a href="/careers/">Careers</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Services</a>
                         <ul class="sub-menu">
-                            <li><a href="#">General Consultations</a></li>
-                            <li><a href="#">Chiropractor Services</a></li>
-                            <li><a href="#">Physiotherapy</a></li>
-                            <li><a href="#">Home-Based Care</a></li>
-                            <li><a href="#">Laboratory Services</a></li>
-                            <li><a href="#">Pharmacy</a></li>
-                            <li><a href="#">Counselling Services</a></li>
-                            <li><a href="#">Sports Massage</a></li>
-                            <li><a href="#">Reflexology</a></li>
-                            <li><a href="#">Occupational Therapy</a></li>
-                            <li><a href="#">Nutritional Services</a></li>
-                            <li><a href="#">Stretch & Exercise Therapy</a></li>
+                            <li><a href="/general-consultations/">General Consultations</a></li>
+                            <li><a href="/chiropractor-services/">Chiropractor Services</a></li>
+                            <li><a href="/physiotherapy/">Physiotherapy</a></li>
+                            <li><a href="/home-based-care/">Home-Based Care</a></li>
+                            <li><a href="/stellar-laboratory-services/">Laboratory Services</a></li>
+                            <li><a href="/pharmacy/">Pharmacy</a></li>
+                            <li><a href="/counselling-services/">Counselling Services</a></li>
+                            <li><a href="/sports-massage/">Sports Massage</a></li>
+                            <li><a href="/reflexology/">Reflexology</a></li>
+                            <li><a href="/occupational-therapy/">Occupational Therapy</a></li>
+                            <li><a href="/nutritional-services/">Nutritional Services</a></li>
+                            <li><a href="/stretch-exercise-therapy/">Stretch & Exercise Therapy</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Conditions</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Arthritis & Joint Pains</a></li>
-                            <li><a href="#">Lower Back Pain & Spine Health</a></li>
-                            <li><a href="#">Sports Injuries</a></li>
-                            <li><a href="#">Stroke Rehabilitation</a></li>
-                            <li><a href="#">Pre- & Post-Surgery Rehab</a></li>
-                            <li><a href="#">Pre & Post-Natal Massages</a></li>
+                            <li><a href="/arthritis-joint-pains/">Arthritis & Joint Pains</a></li>
+                            <li><a href="/lower-back-pain-spine-treatment-stellar-physio-nairobi/">Lower Back Pain & Spine Health</a></li>
+                            <li><a href="/sports-injuries-2/">Sports Injuries</a></li>
+                            <li><a href="/stroke-rehabilitation/">Stroke Rehabilitation</a></li>
+                            <li><a href="/pre-post-surgery-rehab/">Pre- & Post-Surgery Rehab</a></li>
+                            <li><a href="/pre-post-natal-massages/">Pre & Post-Natal Massages</a></li>
+                            <li><a href="/developmental-milestones-for-autism-cerebral-palsy/">Developmental Milestones for Autism & Cerebral Palsy</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Branches</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Kenital Plaza, Ngong Road</a></li>
-                            <li><a href="#">Karen Country Club</a></li>
-                            <li><a href="#">Parklands Sports Club</a></li>
+                            <li><a href="/kenital-plaza-ngong-road/">Kenital Plaza, Ngong Road</a></li>
+                            <li><a href="/karen-country-club/">Karen Country Club</a></li>
+                            <li><a href="/parklands-sports-club/">Parklands Sports Club</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/about/faqs/">FAQs</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
                     <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
+                        <a href="/blog/">Blog</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Health & Wellness</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">Sports Injury</a></li>
-                            <li><a href="#">Therapy</a></li>
-                            <li><a href="#">Mental Health</a></li>
+                            <li><a href="/category/health-wellness/">Health & Wellness</a></li>
+                            <li><a href="/category/health/">Health</a></li>
+                            <li><a href="/category/sports-injury/">Sports Injury</a></li>
+                            <li><a href="/category/therapy/">Therapy</a></li>
+                            <li><a href="/category/mental-health/">Mental Health</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -476,11 +451,10 @@
     <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
-            <div>📍 Kental Plaza, Ngong Road, Nairobi</div>
+            <div>📍 Kenital Plaza, Ngong Road: +254 706 101999 || Parklands Sports Club: +254 755 901942 || Karen Country Club: +254 739 110110</div>
             <div>
-                <span>📞 +254 700 000 000</span>
                 <a href="#">Patient Portal</a>
-                <a href="#">Contact Us</a>
+                <a href="/contact/">Contact Us</a>
             </div>
         </div>
     </div>
@@ -490,19 +464,21 @@
         <div class="container">
             <button class="hamburger" id="openMenu">☰</button>
             <div class="logo">
-                <img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo">
+                <a href="/"><img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo"></a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Conditions</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Branches</a></li>
+                    <li><a href="/about/faqs/">FAQs</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-purple">Book Appointment</a>
+            <a href="/book-appointment/" class="btn btn-purple">Appointment</a>
         </div>
     </header>
 
@@ -510,11 +486,11 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Restoring Your Movement, Reclaiming Your Life.</h1>
-                <p>From chronic pain relief to post-surgical rehabilitation, Stellar Physio provides world-class care tailored to your unique recovery journey.</p>
+                <h1>Health & Wellness!</h1>
+                <p>Welcome to Stellar Physio Health and Wellness Centre, a leading physiotherapy clinic in Nairobi with over 10 years of experience in pain relief, injury rehabilitation, and movement recovery.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-green">Explore Services</a>
-                    <a href="#" class="btn btn-outline-white">Find a Clinic</a>
+                    <a href="/services/" class="btn btn-green">Explore Services</a>
+                    <a href="/contact/" class="btn btn-outline-white">Find a Clinic</a>
                 </div>
             </div>
         </div>
@@ -524,26 +500,26 @@
     <section class="section-padding quick-access">
         <div class="container">
             <h2 class="section-title">Quick Access</h2>
-            <p class="section-subtitle">Access our essential physiotherapy services quickly and efficiently.</p>
+            <p class="section-subtitle">We pride ourselves on delivering personalized, patient-centered care.</p>
             
             <div class="quick-access-grid">
                 <div class="quick-card">
                     <div class="icon">🩺</div>
-                    <h3>Book a Session</h3>
-                    <p>Schedule an appointment with our expert physiotherapists at your convenience.</p>
-                    <a href="#" class="btn btn-green">Book Now</a>
+                    <h3>General Consultations</h3>
+                    <p>This is the initial stage where the doctor assesses and refers to specialists. Our consultations ensure that we identify the root cause of your symptoms, rather than just treating the surface problem.</p>
+                    <a href="/general-consultations/" class="btn btn-green">Learn More</a>
                 </div>
                 <div class="quick-card">
                     <div class="icon">🦴</div>
-                    <h3>Conditions We Treat</h3>
-                    <p>Explore our comprehensive range of treatments for back pain, sports injuries, and more.</p>
-                    <a href="#" class="btn btn-green">Learn More</a>
+                    <h3>Physiotherapy</h3>
+                    <p>This is a branch of medicine that specializes in movement, function and disability. Our physiotherapists treat conditions relating to bones, muscles and nerves. <br><b>Recommended 2-3 times weekly.</b></p>
+                    <a href="/physiotherapy/" class="btn btn-green">Learn More</a>
                 </div>
                 <div class="quick-card">
-                    <div class="icon">📍</div>
-                    <h3>Find a Clinic</h3>
-                    <p>We have multiple locations across Nairobi to serve you better. Get directions easily.</p>
-                    <a href="#" class="btn btn-green">Get Directions</a>
+                    <div class="icon">🧠</div>
+                    <h3>Counseling Services</h3>
+                    <p>We provide evidence-based psychotherapy for individuals, couples, families, and adolescents. We offer structured, goal-oriented support—virtually and in-person—to address emotional, relational, and behavioral challenges across all life stages.<br><b>Recommended once a week</b></p>
+                    <a href="/counselling-services/" class="btn btn-green">Learn More</a>
                 </div>
             </div>
         </div>
@@ -552,32 +528,32 @@
     <!-- SERVICES SECTION -->
     <section class="section-padding services">
         <div class="container">
-            <h2 class="section-title">Our Specialized Services</h2>
-            <p class="section-subtitle">Comprehensive rehabilitation delivered by world-class professionals using state-of-the-art technology.</p>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">We pride ourselves on delivering personalized, patient-centered care.</p>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Physiotherapy">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="General Consultations">
                     <div class="service-card-content">
-                        <h3>Physiotherapy</h3>
-                        <p>A branch of medicine that specializes in movement, function, and disability.</p>
-                        <a href="#" class="service-link">Read More →</a>
+                        <h3>General Consultations</h3>
+                        <p>This is the initial stage where the doctor assesses and refers to specialists. Our consultations ensure that we identify the root cause of your symptoms, rather than just treating the surface problem.</p>
+                        <a href="/general-consultations/" class="service-link">Read More →</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chiropractic">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chiropractor Services">
                     <div class="service-card-content">
-                        <h3>Chiropractic Care</h3>
-                        <p>Diagnosis and treatment of mechanical disorders of the musculoskeletal system.</p>
-                        <a href="#" class="service-link">Read More →</a>
+                        <h3>Chiropractor Services</h3>
+                        <p>Professional chiropractic adjustments and spine alignment to relieve pain and keep your musculoskeletal system working as it should.</p>
+                        <a href="/chiropractor-services/" class="service-link">Read More →</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dry Needling">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Home-Based Care">
                     <div class="service-card-content">
-                        <h3>Dry Needling</h3>
-                        <p>Advanced technique used to treat myofascial pain and trigger points.</p>
-                        <a href="#" class="service-link">Read More →</a>
+                        <h3>Home-Based Care</h3>
+                        <p>Expert therapy brought to your doorstep, for people facing mobility challenges or who prefer personalised care at home.</p>
+                        <a href="/home-based-care/" class="service-link">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -587,7 +563,7 @@
                     <h4 style="color:white; margin:0;">Explore All Services</h4>
                     <p style="color:rgba(255,255,255,0.7); margin:0; font-size:0.9rem;">Discover our complete range of clinical services</p>
                 </div>
-                <a href="#" class="btn btn-green">View Clinical Services</a>
+                <a href="/services/" class="btn btn-green">See All Services</a>
             </div>
         </div>
     </section>
@@ -597,36 +573,36 @@
         <div class="container">
             <div class="locations-layout">
                 <div class="locations-text">
-                    <h2>Our Clinics</h2>
+                    <h2>Our Branches</h2>
                     <p>Stellar Physio clinics offer convenient access to specialist care across Nairobi and beyond. Find the location nearest to you.</p>
-                    <a href="#" class="btn btn-outline-purple">Explore All Locations</a>
+                    <a href="/contact/" class="btn btn-outline-purple">Location Finder</a>
                 </div>
                 <div class="locations-grid">
                     <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Kental Plaza">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Kenital Plaza">
                         <div class="location-info">
-                            <h4>Kental Plaza</h4>
-                            <a href="#">Get Directions →</a>
+                            <h4>Kenital Plaza, Ngong Road</h4>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2988786,36.7995796" target="_blank">Get Directions →</a>
                         </div>
                     </div>
                     <div class="location-card">
                         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Karen Country Club">
                         <div class="location-info">
                             <h4>Karen Country Club</h4>
-                            <a href="#">Get Directions →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.3405045,36.7150441" target="_blank">Get Directions →</a>
                         </div>
                     </div>
                     <div class="location-card">
                         <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Parklands Sports Club">
                         <div class="location-info">
                             <h4>Parklands Sports Club</h4>
-                            <a href="#">Get Directions →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2683794,36.812734" target="_blank">Get Directions →</a>
                         </div>
                     </div>
                     <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Westlands">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Sana Plaza">
                         <div class="location-info">
-                            <h4>Westlands Branch</h4>
+                            <h4>Sana Plaza, Highridge</h4>
                             <a href="#">Get Directions →</a>
                         </div>
                     </div>
@@ -639,12 +615,12 @@
     <section class="section-padding testimonials">
         <div class="container">
             <h2 class="section-title">What Our Patients Say</h2>
-            <p class="section-subtitle">Real stories from our patients and visitors</p>
+            <p class="section-subtitle">Take their word, not ours!</p>
             
             <div class="testimonial-box">
                 <div class="quote-icon">“</div>
-                <p class="testimonial-text">"Great and excellent service. I had severe lower back pain and was struggling to sit for long hours. The team at Stellar Physio was professional, attentive, and I noticed a huge difference after just a few sessions. I highly recommend them!"</p>
-                <div class="testimonial-author">Jane Wanjiru</div>
+                <p class="testimonial-text">"As an active person, I had knee problems but improved significantly after sessions at Stellar Physio. My knee is great now. I highly recommend regular physiotherapy for exercise enthusiasts."</p>
+                <div class="testimonial-author">Daniel Kigo</div>
                 <div class="testimonial-role">Patient</div>
             </div>
         </div>
@@ -653,13 +629,13 @@
     <!-- PARTNERS SECTION -->
     <section class="partners">
         <div class="container">
-            <h2 class="section-title" style="font-size:1.5rem;">Trusted by leading organisations</h2>
+            <h2 class="section-title" style="font-size:1.5rem;">Our Partners</h2>
             <div class="partners-grid">
-                <img src="https://via.placeholder.com/150x50?text=APA+Insurance" alt="Partner 1">
-                <img src="https://via.placeholder.com/150x50?text=Jubilee+Health" alt="Partner 2">
-                <img src="https://via.placeholder.com/150x50?text=Britam" alt="Partner 3">
-                <img src="https://via.placeholder.com/150x50?text=AAR+Insurance" alt="Partner 4">
-                <img src="https://via.placeholder.com/150x50?text=NHIF" alt="Partner 5">
+                <img src="https://via.placeholder.com/150x50?text=AAR+Insurance" alt="AAR Insurance">
+                <img src="https://via.placeholder.com/150x50?text=Jubilee+Health" alt="Jubilee Health">
+                <img src="https://via.placeholder.com/150x50?text=Britam" alt="Britam">
+                <img src="https://via.placeholder.com/150x50?text=Old+Mutual" alt="Old Mutual">
+                <img src="https://via.placeholder.com/150x50?text=Minet" alt="Minet">
             </div>
         </div>
     </section>
@@ -669,36 +645,36 @@
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
                 <div>
-                    <h2 style="margin-bottom: 5px;">Latest News & Updates</h2>
+                    <h2 style="margin-bottom: 5px;">Articles & News</h2>
                     <p style="color: var(--text-light); margin: 0;">Stay informed about our latest developments and healthcare insights.</p>
                 </div>
-                <a href="#" class="btn btn-purple">View All News</a>
+                <a href="/blog/" class="btn btn-purple">View All News</a>
             </div>
 
             <div class="news-layout">
                 <div class="news-featured">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Featured News">
-                    <span class="news-tag">HEALTH TIPS</span>
-                    <h3>Understanding and Preventing Lower Back Pain in the Workplace</h3>
-                    <p style="color: var(--text-light); margin-bottom: 15px;">Learn ergonomic tips and simple exercises you can do at your desk to prevent chronic back pain and improve your posture.</p>
-                    <a href="#" class="service-link">Read More →</a>
+                    <span class="news-tag">HEALTH & WELLNESS</span>
+                    <h3>Kinesiology Taping in Nairobi: What That Colourful Tape</h3>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Blue kinesiology tape applied to a patient’s hip and gluteal muscles during a physiotherapy session at Stellar Physio in Nairobi.</p>
+                    <a href="/kinesiology-taping-in-nairobi-what-that-colourful-tape-really-does-and-when-it-can-help-you/" class="service-link">Read More →</a>
                 </div>
 
                 <div class="news-sidebar">
                     <div class="news-item">
                         <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 2">
                         <div>
-                            <span class="news-tag" style="background-color: var(--primary-purple);">CLINIC NEWS</span>
-                            <h4>New Dry Needling Equipment Arrives at Kental Plaza</h4>
-                            <a href="#" class="service-link" style="font-size: 0.8rem;">Read More →</a>
+                            <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH</span>
+                            <h4>Sports Massage in Parklands, Nairobi: How to Recover</h4>
+                            <a href="/sports-massage-parklands-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
                         </div>
                     </div>
                     <div class="news-item">
                         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 3">
                         <div>
-                            <span class="news-tag" style="background-color: var(--primary-purple);">SPORTS INJURY</span>
-                            <h4>Returning to Sport After an ACL Injury: A Complete Guide</h4>
-                            <a href="#" class="service-link" style="font-size: 0.8rem;">Read More →</a>
+                            <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH & WELLNESS</span>
+                            <h4>Stretch & Exercise Therapy in Nairobi: Move Freely,</h4>
+                            <a href="/stretch-exercise-therapy-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
                         </div>
                     </div>
                 </div>
@@ -719,64 +695,55 @@
                     </form>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Information</h4>
+                    <h4>Contact Us</h4>
                     <ul>
-                        <li>📍 Kental Plaza, Ngong Road, Nairobi</li>
-                        <li>📞 +254 700 000 000</li>
-                        <li>✉️ info@stellarphysio.com</li>
-                        <li>🕒 Mon - Fri: 8:00am - 6:00pm</li>
+                        <li>📧 info@stellarphysio.com</li>
+                        <li>📞 +254 719 881 291</li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Find a Clinic</a></li>
-                        <li><a href="#">Health Blog</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="/general-consultations/">General Consultation</a></li>
+                        <li><a href="/physiotherapy/">Physiotherapy</a></li>
+                        <li><a href="/home-based-care/">Home-based Care</a></li>
+                        <li><a href="/occupational-therapy/">Occupational Therapy</a></li>
+                        <li><a href="/stellar-laboratory-services/">Laboratory Services</a></li>
+                        <li><a href="/chiropractor-services/">Chiropractor Services</a></li>
+                        <li><a href="/pharmacy/">Pharmacy</a></li>
+                        <li><a href="/sports-massage/">Sports Massage</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter (X)</a></li>
-                    </ul>
+                    <h4>Dial A Physio</h4>
+                    <p style="margin-bottom: 15px;">Need help? Chat with us on WhatsApp.</p>
+                    <a href="https://api.whatsapp.com/send?phone=254719881291" class="btn btn-green" target="_blank">Chat on WhatsApp</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Stellar Physio. All rights reserved. | Designed for Prototype Purposes</p>
+                <p>&copy; 2026 Stellar Physio. All rights reserved. Created by <a href="https://awene.co.ke/" target="_blank" style="text-decoration: underline;">Awene Creative Studios</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- =========================================
-         JAVASCRIPT FOR MENU FUNCTIONALITY
-         ========================================= -->
+    <!-- JAVASCRIPT FOR MENU FUNCTIONALITY -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get elements
             const openBtn = document.getElementById('openMenu');
             const closeBtn = document.getElementById('closeMenu');
             const mobileMenu = document.getElementById('mobileMenu');
             const subMenuParents = document.querySelectorAll('.menu-item-has-children > a');
 
-            // Open Menu
             openBtn.addEventListener('click', function() {
                 mobileMenu.classList.add('open');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+                document.body.style.overflow = 'hidden';
             });
 
-            // Close Menu (Button)
             closeBtn.addEventListener('click', function() {
                 mobileMenu.classList.remove('open');
                 document.body.style.overflow = '';
             });
 
-            // Close Menu (Clicking outside)
             mobileMenu.addEventListener('click', function(e) {
                 if (e.target === mobileMenu) {
                     mobileMenu.classList.remove('open');
@@ -784,25 +751,12 @@
                 }
             });
 
-            // Toggle Submenus on click of the + button area
             subMenuParents.forEach(function(link) {
                 link.addEventListener('click', function(e) {
-                    // Prevent going to link if it's a dropdown
                     e.preventDefault();
-                    
-                    // Find the submenu
                     const subMenu = this.nextElementSibling;
-                    
                     if (subMenu && subMenu.classList.contains('sub-menu')) {
-                        // Toggle it
                         subMenu.classList.toggle('show');
-                        
-                        // Change + to - 
-                        if (subMenu.classList.contains('show')) {
-                            this.style.setProperty('--plus-content', '"-"');
-                        } else {
-                            this.style.setProperty('--plus-content', '"+"');
-                        }
                     }
                 });
             });
