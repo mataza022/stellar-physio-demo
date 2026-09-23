@@ -82,7 +82,8 @@
 
         header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         
-        .logo img { height: 90px; width: auto; display: block; }
+        /* INCREASED LOGO SIZE FOR DESKTOP */
+        .logo img { height: 130px; width: auto; display: block; }
 
         nav ul { display: flex; gap: 25px; }
         nav a { font-weight: 500; color: var(--text-dark); }
@@ -145,7 +146,7 @@
             background-color: var(--primary-purple-light);
             border-bottom: 1px solid #e0d0ed;
         }
-        .mobile-logo img { height: 70px; width: auto; }
+        .mobile-logo img { height: 80px; width: auto; }
 
         .mobile-menu-form {
             padding: 20px;
@@ -349,12 +350,9 @@
         /* =========================================
            RESPONSIVE DESIGN (Mobile & Tablet Adjustments)
            ========================================= */
-        /* Changed breakpoint to 991px to ensure all phones and tablets get the mobile layout */
         @media (max-width: 991px) {
-            /* Hide the crowded top bar on mobile and tablet */
             .top-bar { display: none; }
             
-            /* Clean up the main header */
             header .container { 
                 display: flex; 
                 justify-content: center; 
@@ -363,7 +361,6 @@
                 position: relative;
             }
             
-            /* Position hamburger absolutely to the left */
             .hamburger { 
                 display: block; 
                 position: absolute; 
@@ -372,19 +369,17 @@
                 transform: translateY(-50%); 
             }
             
-            /* Center the logo */
             .logo { 
                 margin: 0 auto; 
                 display: block; 
                 text-align: center; 
             }
-            .logo img { height: 60px; width: auto; }
+            /* INCREASED LOGO SIZE FOR MOBILE */
+            .logo img { height: 90px; width: auto; }
             
-            /* Hide desktop elements */
             nav ul { display: none; } 
             header .btn-purple { display: none; } 
 
-            /* Layout adjustments for sections */
             .quick-access-grid, .services-grid { grid-template-columns: 1fr; }
             .locations-layout { grid-template-columns: 1fr; }
             .news-layout { grid-template-columns: 1fr; }
@@ -395,7 +390,6 @@
             .news-item img { height: 150px; }
         }
 
-        /* Extra small devices */
         @media (max-width: 576px) {
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
@@ -521,7 +515,6 @@
                 <p>Welcome to Stellar Physio Health and Wellness Centre, a leading physiotherapy clinic in Nairobi with over 10 years of experience in pain relief, injury rehabilitation, and movement recovery.</p>
                 <div class="hero-buttons">
                     <a href="/services/" class="btn btn-green">Explore Services</a>
-                    <!-- Changed button text from "Find a Clinic" to "Book Now" -->
                     <a href="/book-appointment/" class="btn btn-outline-white">Book Now</a>
                 </div>
             </div>
@@ -652,148 +645,4 @@
             <div class="testimonial-box">
                 <div class="quote-icon">“</div>
                 <p class="testimonial-text">"As an active person, I had knee problems but improved significantly after sessions at Stellar Physio. My knee is great now. I highly recommend regular physiotherapy for exercise enthusiasts."</p>
-                <div class="testimonial-author">Daniel Kigo</div>
-                <div class="testimonial-role">Patient</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PARTNERS SECTION -->
-    <section class="partners">
-        <div class="container">
-            <h2 class="section-title" style="font-size:1.5rem;">Our Partners</h2>
-            <div class="partners-grid">
-                <img src="https://via.placeholder.com/150x50?text=AAR+Insurance" alt="AAR Insurance">
-                <img src="https://via.placeholder.com/150x50?text=Jubilee+Health" alt="Jubilee Health">
-                <img src="https://via.placeholder.com/150x50?text=Britam" alt="Britam">
-                <img src="https://via.placeholder.com/150x50?text=Old+Mutual" alt="Old Mutual">
-                <img src="https://via.placeholder.com/150x50?text=Minet" alt="Minet">
-            </div>
-        </div>
-    </section>
-
-    <!-- NEWS SECTION -->
-    <section class="section-padding news">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
-                <div>
-                    <h2 style="margin-bottom: 5px;">Articles & News</h2>
-                    <p style="color: var(--text-light); margin: 0;">Stay informed about our latest developments and healthcare insights.</p>
-                </div>
-                <a href="/blog/" class="btn btn-purple">View All News</a>
-            </div>
-
-            <div class="news-layout">
-                <div class="news-featured">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Featured News">
-                    <span class="news-tag">HEALTH & WELLNESS</span>
-                    <h3>Kinesiology Taping in Nairobi: What That Colourful Tape</h3>
-                    <p style="color: var(--text-light); margin-bottom: 15px;">Blue kinesiology tape applied to a patient’s hip and gluteal muscles during a physiotherapy session at Stellar Physio in Nairobi.</p>
-                    <a href="/kinesiology-taping-in-nairobi-what-that-colourful-tape-really-does-and-when-it-can-help-you/" class="service-link">Read More →</a>
-                </div>
-
-                <div class="news-sidebar">
-                    <div class="news-item">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 2">
-                        <div>
-                            <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH</span>
-                            <h4>Sports Massage in Parklands, Nairobi: How to Recover</h4>
-                            <a href="/sports-massage-parklands-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=60" alt="News 3">
-                        <div>
-                            <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH & WELLNESS</span>
-                            <h4>Stretch & Exercise Therapy in Nairobi: Move Freely,</h4>
-                            <a href="/stretch-exercise-therapy-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Subscribe to our Newsletter</h4>
-                    <p style="margin-bottom: 15px;">Get the latest health tips and Stellar Physio updates delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>📧 info@stellarphysio.com</li>
-                        <li>📞 +254 719 881 291</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/general-consultations/">General Consultation</a></li>
-                        <li><a href="/physiotherapy/">Physiotherapy</a></li>
-                        <li><a href="/home-based-care/">Home-based Care</a></li>
-                        <li><a href="/occupational-therapy/">Occupational Therapy</a></li>
-                        <li><a href="/stellar-laboratory-services/">Laboratory Services</a></li>
-                        <li><a href="/chiropractor-services/">Chiropractor Services</a></li>
-                        <li><a href="/pharmacy/">Pharmacy</a></li>
-                        <li><a href="/sports-massage/">Sports Massage</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Dial A Physio</h4>
-                    <p style="margin-bottom: 15px;">Need help? Chat with us on WhatsApp.</p>
-                    <a href="https://api.whatsapp.com/send?phone=254719881291" class="btn btn-green" target="_blank">Chat on WhatsApp</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Stellar Physio. All rights reserved. Created by <a href="https://awene.co.ke/" target="_blank" style="text-decoration: underline;">Awene Creative Studios</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT FOR MENU FUNCTIONALITY -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const openBtn = document.getElementById('openMenu');
-            const closeBtn = document.getElementById('closeMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const subMenuParents = document.querySelectorAll('.menu-item-has-children > a');
-
-            openBtn.addEventListener('click', function() {
-                mobileMenu.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeBtn.addEventListener('click', function() {
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-
-            mobileMenu.addEventListener('click', function(e) {
-                if (e.target === mobileMenu) {
-                    mobileMenu.classList.remove('open');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            subMenuParents.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const subMenu = this.nextElementSibling;
-                    if (subMenu && subMenu.classList.contains('sub-menu')) {
-                        subMenu.classList.toggle('show');
-                    }
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
+                <div class="testimonial-author">
