@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stellar Physio | Best Physiotherapy Clinic in Nairobi</title>
     <style>
         /* =========================================
-           CSS VARIABLES (Stellar Physio Colors)
+           CSS VARIABLES (Stellar Physio Colours)
            ========================================= */
         :root {
             --primary-purple: #5c2c7e; 
@@ -256,7 +256,7 @@
             transition: box-shadow 0.3s ease;
         }
         .quick-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .quick-card .icon { font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 15px; }
+        .quick-card .icon-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; display: block; }
         .quick-card p { color: var(--text-light); margin-bottom: 25px; font-size: 0.95rem; }
 
         /* =========================================
@@ -374,7 +374,6 @@
                 display: block; 
                 text-align: center; 
             }
-            /* INCREASED LOGO SIZE FOR MOBILE */
             .logo img { height: 90px; width: auto; }
             
             nav ul { display: none; } 
@@ -402,13 +401,13 @@
     <!-- MOBILE SIDE MENU -->
     <div class="vs-menu-wrapper" id="mobileMenu">
         <div class="vs-menu-area">
-            <button class="vs-menu-toggle" id="closeMenu">✕</button>
+            <button class="vs-menu-toggle" id="closeMenu">X</button>
             <div class="mobile-logo">
                 <a href="/"><img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo"></a>
             </div>
             <form class="mobile-menu-form" action="/">
                 <input type="text" placeholder="Search....">
-                <button type="submit">🔍</button>
+                <button type="submit">Go</button>
             </form>
             <div class="vs-mobile-menu">
                 <ul>
@@ -476,7 +475,7 @@
     <!-- TOP BAR (Hidden on mobile via CSS) -->
     <div class="top-bar">
         <div class="container">
-            <div>📍 Kenital Plaza, Ngong Road: +254 706 101999 || Parklands Sports Club: +254 755 901942 || Karen Country Club: +254 739 110110</div>
+            <div>Kenital Plaza, Ngong Road: +254 706 101999 || Parklands Sports Club: +254 755 901942 || Karen Country Club: +254 739 110110</div>
             <div>
                 <a href="#">Patient Portal</a>
                 <a href="/contact/">Contact Us</a>
@@ -487,7 +486,7 @@
     <!-- HEADER / NAVIGATION -->
     <header>
         <div class="container">
-            <button class="hamburger" id="openMenu">☰</button>
+            <button class="hamburger" id="openMenu">&#9776;</button>
             <div class="logo">
                 <a href="/"><img src="Stellarphysio_NEW_logo.png" alt="Stellar Physio Logo"></a>
             </div>
@@ -525,23 +524,23 @@
     <section class="section-padding quick-access">
         <div class="container">
             <h2 class="section-title">Quick Access</h2>
-            <p class="section-subtitle">We pride ourselves on delivering personalized, patient-centered care.</p>
+            <p class="section-subtitle">We pride ourselves on delivering personalised, patient-centred care.</p>
             
             <div class="quick-access-grid">
                 <div class="quick-card">
-                    <div class="icon">🩺</div>
+                    <img src="genericonsultation.jpg" alt="General Consultations" class="icon-img">
                     <h3>General Consultations</h3>
                     <p>This is the initial stage where the doctor assesses and refers to specialists. Our consultations ensure that we identify the root cause of your symptoms, rather than just treating the surface problem.</p>
                     <a href="/general-consultations/" class="btn btn-green">Learn More</a>
                 </div>
                 <div class="quick-card">
-                    <div class="icon">🦴</div>
+                    <img src="hero.jpeg" alt="Physiotherapy" class="icon-img">
                     <h3>Physiotherapy</h3>
                     <p>This is a branch of medicine that specializes in movement, function and disability. Our physiotherapists treat conditions relating to bones, muscles and nerves. <br><b>Recommended 2-3 times weekly.</b></p>
                     <a href="/physiotherapy/" class="btn btn-green">Learn More</a>
                 </div>
                 <div class="quick-card">
-                    <div class="icon">🧠</div>
+                    <img src="counselling.png" alt="Counselling Services" class="icon-img">
                     <h3>Counseling Services</h3>
                     <p>We provide evidence-based psychotherapy for individuals, couples, families, and adolescents. We offer structured, goal-oriented support—virtually and in-person—to address emotional, relational, and behavioral challenges across all life stages.<br><b>Recommended once a week</b></p>
                     <a href="/counselling-services/" class="btn btn-green">Learn More</a>
@@ -554,15 +553,15 @@
     <section class="section-padding services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">We pride ourselves on delivering personalized, patient-centered care.</p>
+            <p class="section-subtitle">We pride ourselves on delivering personalised, patient-centred care.</p>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="General Consultations">
+                    <img src="genericonsultation.jpg" alt="General Consultations">
                     <div class="service-card-content">
                         <h3>General Consultations</h3>
                         <p>This is the initial stage where the doctor assesses and refers to specialists. Our consultations ensure that we identify the root cause of your symptoms, rather than just treating the surface problem.</p>
-                        <a href="/general-consultations/" class="service-link">Read More →</a>
+                        <a href="/general-consultations/" class="service-link">Read More &rarr;</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -570,7 +569,7 @@
                     <div class="service-card-content">
                         <h3>Chiropractor Services</h3>
                         <p>Professional chiropractic adjustments and spine alignment to relieve pain and keep your musculoskeletal system working as it should.</p>
-                        <a href="/chiropractor-services/" class="service-link">Read More →</a>
+                        <a href="/chiropractor-services/" class="service-link">Read More &rarr;</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -578,7 +577,7 @@
                     <div class="service-card-content">
                         <h3>Home-Based Care</h3>
                         <p>Expert therapy brought to your doorstep, for people facing mobility challenges or who prefer personalised care at home.</p>
-                        <a href="/home-based-care/" class="service-link">Read More →</a>
+                        <a href="/home-based-care/" class="service-link">Read More &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -604,31 +603,24 @@
                 </div>
                 <div class="locations-grid">
                     <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Kenital Plaza">
+                        <img src="ngongrdbranch.jpg" alt="Kenital Plaza">
                         <div class="location-info">
                             <h4>Kenital Plaza, Ngong Road</h4>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2988786,36.7995796" target="_blank">Get Directions →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2988786,36.7995796" target="_blank">Get Directions &rarr;</a>
                         </div>
                     </div>
                     <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Karen Country Club">
+                        <img src="karencountryclub.jpg" alt="Karen Country Club">
                         <div class="location-info">
                             <h4>Karen Country Club</h4>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.3405045,36.7150441" target="_blank">Get Directions →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.3405045,36.7150441" target="_blank">Get Directions &rarr;</a>
                         </div>
                     </div>
                     <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Parklands Sports Club">
+                        <img src="genericonsultation.jpg" alt="Parklands Sports Club">
                         <div class="location-info">
                             <h4>Parklands Sports Club</h4>
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2683794,36.812734" target="_blank">Get Directions →</a>
-                        </div>
-                    </div>
-                    <div class="location-card">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt="Sana Plaza">
-                        <div class="location-info">
-                            <h4>Sana Plaza, Highridge</h4>
-                            <a href="#">Get Directions →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-1.2683794,36.812734" target="_blank">Get Directions &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -643,7 +635,7 @@
             <p class="section-subtitle">Take their word, not ours!</p>
             
             <div class="testimonial-box">
-                <div class="quote-icon">“</div>
+                <div class="quote-icon">&ldquo;</div>
                 <p class="testimonial-text">"As an active person, I had knee problems but improved significantly after sessions at Stellar Physio. My knee is great now. I highly recommend regular physiotherapy for exercise enthusiasts."</p>
                 <div class="testimonial-author">Daniel Kigo</div>
                 <div class="testimonial-role">Patient</div>
@@ -681,8 +673,8 @@
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Featured News">
                     <span class="news-tag">HEALTH & WELLNESS</span>
                     <h3>Kinesiology Taping in Nairobi: What That Colourful Tape</h3>
-                    <p style="color: var(--text-light); margin-bottom: 15px;">Blue kinesiology tape applied to a patient’s hip and gluteal muscles during a physiotherapy session at Stellar Physio in Nairobi.</p>
-                    <a href="/kinesiology-taping-in-nairobi-what-that-colourful-tape-really-does-and-when-it-can-help-you/" class="service-link">Read More →</a>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Blue kinesiology tape applied to a patient's hip and gluteal muscles during a physiotherapy session at Stellar Physio in Nairobi.</p>
+                    <a href="/kinesiology-taping-in-nairobi-what-that-colourful-tape-really-does-and-when-it-can-help-you/" class="service-link">Read More &rarr;</a>
                 </div>
 
                 <div class="news-sidebar">
@@ -691,7 +683,7 @@
                         <div>
                             <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH</span>
                             <h4>Sports Massage in Parklands, Nairobi: How to Recover</h4>
-                            <a href="/sports-massage-parklands-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
+                            <a href="/sports-massage-parklands-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More &rarr;</a>
                         </div>
                     </div>
                     <div class="news-item">
@@ -699,7 +691,7 @@
                         <div>
                             <span class="news-tag" style="background-color: var(--primary-purple);">HEALTH & WELLNESS</span>
                             <h4>Stretch & Exercise Therapy in Nairobi: Move Freely,</h4>
-                            <a href="/stretch-exercise-therapy-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More →</a>
+                            <a href="/stretch-exercise-therapy-nairobi/" class="service-link" style="font-size: 0.8rem;">Read More &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -722,8 +714,8 @@
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li>📧 info@stellarphysio.com</li>
-                        <li>📞 +254 719 881 291</li>
+                        <li>info@stellarphysio.com</li>
+                        <li>+254 719 881 291</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -742,7 +734,9 @@
                 <div class="footer-col">
                     <h4>Dial A Physio</h4>
                     <p style="margin-bottom: 15px;">Need help? Chat with us on WhatsApp.</p>
-                    <a href="https://api.whatsapp.com/send?phone=254719881291" class="btn btn-green" target="_blank">Chat on WhatsApp</a>
+                    <a href="https://api.whatsapp.com/send?phone=254719881291" target="_blank">
+                        <img src="dialaphysiologo.png" alt="Dial A Physio" style="max-width: 150px; height: auto;">
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
